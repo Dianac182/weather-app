@@ -1,34 +1,4 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
 import React from "react";
-
 import Title from "./components/Title";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
@@ -38,7 +8,7 @@ const API_KEY = "697a0d74b2aefcd58a102c215968b9df";
 class App extends React.Component {
   // Define states to track changes of data
   state = {
-    icon_weather: undefined,
+    // image_weather: undefined,
     city: undefined,
     country: undefined,
     description: undefined,
@@ -62,7 +32,7 @@ class App extends React.Component {
 
     // Call setState method to update the state data
     this.setState({
-      icon_weather: data.weather[0].icon,
+      // image_weather: data.weather[0].icon,
       city: data.name,
       country: data.sys.country,
       description: data.weather[0].description,
@@ -70,7 +40,7 @@ class App extends React.Component {
       min_temperature: data.main.temp_min,
       max_temperature: data.main.temp_max,
       error: ""
-    })
+    });
   }
 
   render() {
