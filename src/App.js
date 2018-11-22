@@ -36,8 +36,15 @@ import Weather from "./components/Weather";
 const API_KEY = "697a0d74b2aefcd58a102c215968b9df";
 
 class App extends React.Component {
-  getWeather = async () => {
-    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Stockholm,Sweden&appid=${API_KEY}&units=metric`);
+  // Method for calling the API and getting the data
+  getWeather = async (e) => {
+    // To prevent a full page refresh
+    e.preventDefault();
+    // To use the event object to access the values of the inputs
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+    // Converting the data from API to JavaScript
     const data = await api_call.json();
     console.log(data);
   } 
@@ -46,7 +53,7 @@ class App extends React.Component {
     return (
       <div>
         <Title />
-        <Form />
+        <Form getWeather={this.getWeather}/>
         <Weather/>
       </div>
     );
