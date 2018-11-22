@@ -78,7 +78,16 @@ class App extends React.Component {
       <div>
         <Title />
         <Form getWeather={this.getWeather}/>
-        <Weather/>
+        <Weather
+          icon_weather={this.state.icon_weather}
+          city={this.state.city}
+          country={this.state.country}
+          description={this.state.description}
+          temperature={this.state.temperature}
+          min_temperature={this.state.min_temperature}
+          max_temperature={this.state.max_temperature}
+          error={this.state.error}
+        />
       </div>
     );
   }
