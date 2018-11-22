@@ -4,7 +4,7 @@ class Weather extends React.Component {
   render() {
     return (
       <div>
-        <h1>Weather App</h1>
+        <h1>This is my Weather Component</h1>
       </div>
     )
   }

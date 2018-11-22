@@ -36,6 +36,18 @@ import Weather from "./components/Weather";
 const API_KEY = "697a0d74b2aefcd58a102c215968b9df";
 
 class App extends React.Component {
+  // Define states to track changes of data
+  state = {
+    icon_weather: undefined,
+    city: undefined,
+    country: undefined,
+    description: undefined,
+    temperature: undefined,
+    min_temperature: undefined,
+    max_temperature: undefined,
+    error: undefined
+  }
+
   // Method for calling the API and getting the data
   getWeather = async (e) => {
     // To prevent a full page refresh
@@ -47,8 +59,20 @@ class App extends React.Component {
     // Converting the data from API to JavaScript
     const data = await api_call.json();
     console.log(data);
-  } 
-  
+
+    // Call setState method to update the state data
+    this.setState({
+      icon_weather: data.weather[0].icon,
+      city: data.name,
+      country: data.sys.country,
+      description: data.weather[0].description,
+      temperature: data.main.temp,
+      min_temperature: data.main.temp_min,
+      max_temperature: data.main.temp_max,
+      error: ""
+    })
+  }
+
   render() {
     return (
       <div>
