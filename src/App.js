@@ -26,21 +26,28 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
-    // Converting the data from API to JavaScript
-    const data = await api_call.json();
-    console.log(data);
+    
+    if(city && country){
+      // Converting the data from API to JavaScript
+      const data = await api_call.json();
+      console.log(data);
 
-    // Call setState method to update the state data
-    this.setState({
-      // image_weather: data.weather[0].icon,
-      city: data.name,
-      country: data.sys.country,
-      description: data.weather[0].description,
-      temperature: data.main.temp,
-      min_temperature: data.main.temp_min,
-      max_temperature: data.main.temp_max,
-      error: ""
-    });
+      // Call setState method to update the state data
+      this.setState({
+        // image_weather: data.weather[0].icon,
+        city: data.name,
+        country: data.sys.country,
+        description: data.weather[0].description,
+        temperature: data.main.temp,
+        min_temperature: data.main.temp_min,
+        max_temperature: data.main.temp_max,
+        error: ""
+      });
+    }else {
+      this.setState({
+        error: "Please enter the necessary inputs."
+      });
+    }
   }
 
   render() {
