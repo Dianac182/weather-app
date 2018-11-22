@@ -30,7 +30,6 @@ class App extends React.Component {
     if(city && country){
       // Converting the data from API to JavaScript
       const data = await api_call.json();
-      console.log(data);
 
       // Call setState method to update the state data
       this.setState({
