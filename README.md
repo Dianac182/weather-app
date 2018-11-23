@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather App
+
+This is a simple weather app using React and boostrap 4. This project was created using [Create React App](https://github.com/facebook/create-react-app). The goal was to replicate this [Weather App](https://weather-app-9fae0.firebaseapp.com).
+
 
 ## Available Scripts
 
