@@ -51,19 +51,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Title />
-        <Form getWeather={this.getWeather}/>
-        <Weather
-          icon_weather={this.state.icon_weather}
-          city={this.state.city}
-          country={this.state.country}
-          description={this.state.description}
-          temperature={this.state.temperature}
-          min_temperature={this.state.min_temperature}
-          max_temperature={this.state.max_temperature}
-          error={this.state.error}
-        />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-5">
+            <Title />
+          </div>
+          <div className="col-sm-7">
+            <Form getWeather={this.getWeather}/>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <Weather
+              icon_weather={this.state.icon_weather}
+              city={this.state.city}
+              country={this.state.country}
+              description={this.state.description}
+              temperature={this.state.temperature}
+              min_temperature={this.state.min_temperature}
+              max_temperature={this.state.max_temperature}
+              error={this.state.error}
+            />
+          </div>
+        </div>
       </div>
     );
   }
