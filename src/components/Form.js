@@ -10,7 +10,7 @@ const Form = props => (
         <input type="text" name="country" placeholder="Country Name" className="form-control input-field"/>
       </div>
       <div className="col-3">
-        <button type="button" className="btn btn-info">Get Weather</button>
+        <button type="submit" className="btn btn-info">Get Weather</button>
       </div>
     </div>
   </form>
