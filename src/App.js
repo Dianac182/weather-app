@@ -52,11 +52,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-5">
+        <div className="row py-3 px-2 header-container">
+          <div className="col-5">
             <Title />
           </div>
-          <div className="col-sm-7">
+          <div className="col-7 text-right">
             <Form getWeather={this.getWeather}/>
           </div>
         </div>

@@ -1,0 +1,24 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ffd12b;
+}
+
+.header-container {
+  background-color:	#ff8007;
+}
+
+.title {
+  color: #faf0e6;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.input-field {
+  width: 10em;
+}
+
+@media only screen and (max-width: 602px) {
+  .title {
+    font-size: 5vw;
+  }
+}
